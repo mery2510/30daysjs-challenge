@@ -1,4 +1,5 @@
-// EXERCİSE SORULARI 
+// 9.DAYS EXERCISE
+
 
 const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand'];
 const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
