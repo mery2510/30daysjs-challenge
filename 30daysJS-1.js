@@ -15,6 +15,7 @@ console.log(newChallenge);
 //console.log(newChallenge.includes("Days")); //true, çünkü string içerisinde Days var. 
 //console.log(newChallenge.includes("days")); //false, çünkü string içerisinde days yok. 
 /*console.log(newChallenge.split(''));
+
 let newChallenge2= "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon";
 console.log(newChallenge2);
 console.log(newChallenge2.split(','));  // bu işlem ile stringdeki virgülleri kaldırarak her elemanı diziye aktardık. */
