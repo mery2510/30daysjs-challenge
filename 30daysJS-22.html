@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 style="color: coral;" >text</h2>
+    <h2 style="color: rgb(255, 127, 80); ">text2</h2>
+    <h2 style="color: rgb(255, 130, 100); ">text3</h2>
+    <h2 style="color: coral; ">text4</h2>
+    <h2 style="color: coral; ">text5</h2>
+    <h2 style="color: coral; ">text6</h2>
+
+    <script>
+        //------------------DOM(Document Object Model)-Day 2-------------//
+        let h1= document.createElement('h1');
+        h1.className='text';
+        h1.style.backgroundColor='blue';
+        h1.textContent ='bu yazı Javascript ile eklendi...';
+
+// Birden çok öğe oluşturmak için döngü kullanmalıyız. Döngü kullanarak istediğimiz kadar HTML öğesi oluşturabiliriz. 
+//Öğeyi oluşturduktan sonra, HTML nesnesinin farklı özelliklerine değer atayabiliriz.
+
+        // önemli not:  document.body dediğimizde body etiketinin altında veya içinde işlem yapabiliriz. 
+
+        document.body.appendChild(h1);  // bu yöntem ile yukarda oluşturduğum yazıyı body etiketinin altında yazdırabildik. 
+        // document.body.appendchild ile h2 etiketinin altında bu değerleri yazdırdık. ancak h2 etiketini h1 etiketinden sonra yazdırmak
+        //için şunu yaparız. 
+        document.body.prepend(h1); // prepend etiketi HTML etiketlerinin üstüne ekleyecektir. 
+// FOR döngüsü ile body etiketine h1 etiketleri eklemek için 
+        for (let i=1; i<= 10; i++){
+            let h2= document.createElement('h2');
+            h2.className = 'class';
+            h2.style.backgroundColor ='red';
+            h2.textContent='BU YAZI JAVASCRİPT İLE YAZILMIŞTIR...' +i;
+            h2.style.color ='#fff';
+            document.body.appendChild(h2);   // for döngüsü ile body etiketi altına 10 adet h2 başlıklarından eklendi. 
+
+        }
+
+//Bir HTML oluşturduktan sonra eleman veya elemanları kaldırmak isteyebiliriz ve removeChild() yöntemini kullanabiliriz.
+// eğerki remove () kullanırsek nesnenin hepsini silecektir. 
+// ancak removechild() kulanırsak bir nesnenin altındaki nesne silinr. bunun için nereden, hengi nesneden nesne silineceği belirlenmelidir.
+        const allH2elements = document.querySelectorAll('h2');  //body etiketinin altındaki h2 başlıklarının hepsini seçtik 
+        
+        // console.log(allH2elements);// bunalrı konsolda bastırdık. 
+        // for ... of döngüsü ile de bu işlemi gerçekleştirebiliriz. 
+        for (const h2 of allH2elements){
+        //    document.body.removeChild(h2);   // body etiketinin altıındaki h2 etiketlerinin silinmesi sağlandı. 
+           // eğer ki h2.remove() deseydik her yerdeki h2 etiketlerini silecekti. 
+            document.body.appendChild(h2);
+            // h2.remove();   // bu kod satırı ile HTML içerisindeki her bir h2 etiketlerini başlıklarını silmektedir. 
+        }
+
+        // eğerki h2 etiketlerinin içerisindeki değerleri kaldırmak istersek de şu yöntem kullanabiliriz. 
+        for (const h2 of allH2elements){
+            // h2.innerHTML ='';  // bu yöntem ile h2 etiketleri mevcut olur ancak içlerinde herhngi bir değer bulunmaz. 
+            h2.innerHTML ='bu yazıyı meryem islam yazmıştır. '
+        }
+
+        
+
+
+
+    </script>
+    
+</body>
+</html>

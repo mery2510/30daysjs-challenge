@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1 class='title' id='first-title'>First Title</h1>
+     <h1 class='title' id='second-title'>Second Title</h1>
+     <h1 class='title' id='third-title'>Third Title</h1>
+     <h1 class='title' id='title3' >Forth Title</h1>
+     <h1 class="title" id="title4"> Five Title</h1>
+     <h1></h1>
+     <h1></h1>
+     <h1></h1>
+     <h1></h1>
+    
+<script>
+    // ***************************21.DAYS DOM*****************************//
+    /*HTML belgesi bir JavaScript Nesnesi olarak yapılandırılmıştır. 
+    Her HTML öğesinin, onu değiştirmeye yardımcı olabilecek farklı özellikleri vardır. 
+    JavaScript kullanarak HTML öğelerini almak, oluşturmak, eklemek veya kaldırmak mümkündür. Aşağıdaki örnekleri kontrol edin. 
+    JavaScript kullanarak HTML öğesi seçmek, CSS kullanarak seçim yapmaya benzer.
+     Bir HTML öğesi seçmek için etiket adını, kimliği, sınıf adını veya diğer nitelikleri kullanırız.
+    */
+   const allTitles = document.getElementsByTagName('h1');
+//    console.log(allTitles);
+//    console.log(allTitles.length);
+
+//    for (let i =0; i<allTitles.length; i++){
+//     console.log(allTitles[i]);                 // html içerisindeki h1 yazılarını for ile de tarayıcıdan gösterebilriiz. 
+//    }
+
+const allTitles2 = document.getElementsByClassName('title');
+// console.log(allTitles2);
+// console.log(allTitles2.length);
+
+const allTitles3= document.getElementById('first-title');
+// console.log(allTitles3);
+
+//querySelector: HTML öğesini etiket adı, kimliği veya sınıfına göre seçmek için kullanılabilir. 
+//Etiket adı kullanılırsa, yalnızca ilk öğeyi seçer.
+let firstTitle= document.querySelector('h1');  // bütün h1 işerisindeki yazıları değişkenleri? aldık. 
+console.log(firstTitle);
+
+// querySelectorAll: etiket adına veya sınıfına göre html öğelerini seçmek için kullanılabilir. 
+// Dizi yöntemlerini destekleyen, dizi benzeri bir nesne olan bir nodeList döndürür. 
+// Her nodeList öğesi arasında döngü yapmak için for döngüsü veya forEach kullanabiliriz.
+
+
+let firstTitle2= document.querySelectorAll('h1');  // bütün h1 işerisindeki yazıları değişkenleri? aldık. 
+console.log(firstTitle2);
+console.log(allTitles2.length);   // h1 in uzunluğunu aldık. 
+for (let i=0; i<allTitles2.length; i++){
+    // console.log(allTitles2[i]);    // for döngüsü ile bütün h1 başlıklarını getirdik.  
+
+}
+
+const titles = document.querySelectorAll('h1');
+titles[3].className ='title'  // titles[3] ile h1 başlıklarına son 1 tane daha başlık eklendi ve bu başlığa class ismi ve id verildi. 
+titles[3].id = 'title3';
+
+titles[4].className='title'
+titles[4].id ='title4';
+
+titles[5].className = 'title';
+titles[5].id= 'title5';
+// console.log(titles);
+
+titles[6].className ='title';
+titles[6].id='title6';
+
+titles[1].style.color='blue'; // title üyelerinin css özellikleri dğeiştirlebildi. 
+titles[0].style.backgroundColor= 'green';
+titles[3].title ='test_başlık';   // title= başlığın üzerinde fareyi durdurduğumuzda fare üzerinde gelen başlığı temsil eder. 
+
+// html e attiribute eklemek istediğimizde yani yeni özellikler eklemek istediğimizde 
+titles[0].setAttribute('style', 'color: blue','backgroundColor:  ');
+titles[1].setAttribute ('title', 'feyza meryem islam');
+
+titles[1].classList.add('class');  // 1.elemanın class ismine ek olarak class ismini de ekelmiş olduk. 
+titles[0].textContent= '1.title'  // 1. başlığın içindeki stringi 1.title olarak değiştirdik. 
+
+//Çoğu insan textContent ve innerHTML arasında kafası karışır. 
+//textContent, bir HTML öğesine metin eklemek içindir, ancak innerHTML bir alt öğe olarak bir metin veya HTML öğesi veya öğeleri ekleyebilir.
+
+// const arr= ['1','2','3'];
+// arr.length=0;  // bu yöntem ile dizi içerisindeki elemanlar silinip boş dizi elde edilebilmektedir. 
+
+// console.log(arr);
+
+// const titles = document.querySelectorAll('h1')
+titles.forEach((title, i) => {
+//   title.style.fontSize = '24px' // all titles will have 24px font size
+  if (i % 2 === 0) {
+    title.style.color = 'green'
+    title.style.backgroundColor ='yellow';
+    title.style.fontSize='30px';
+  } else {
+    title.style.color = 'pink'
+    title.style.backgroundColor = 'purple';
+    title.style.fontSize ='20px';
+  }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
